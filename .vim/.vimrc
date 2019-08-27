@@ -66,6 +66,9 @@ set laststatus=2
 " Enable mouse in all modes
 set mouse=a
 
+" set undolevels
+set undolevels=1000
+
 " Don’t show the intro message when starting Vim
 set shortmess=atI
 
@@ -90,3 +93,14 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
+" set Abbrevations
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
