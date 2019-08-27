@@ -40,7 +40,7 @@ cd ~
 ln -s .vim/.vimrc .vimrc
 ```
 
-### For git
+### For git config
 
 you can update the existing `.gitconfig` from your home dir or you can copy from the repository you cloned.
 
