@@ -45,6 +45,9 @@ set backupskip=/tmp/*,/private/tmp/*,*tmp/*
 " Enable line numbers
 set number
 
+" Always wrap long lines:
+" set wrap
+
 " Enable syntax highlighting
 syntax on
 
