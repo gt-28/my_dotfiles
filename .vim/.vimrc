@@ -64,7 +64,11 @@ set ignorecase
 set incsearch
 
 " Always show status line
+set statusline=[%02n]\ %f\ %(\[%M%R%H]%)%=\ %4l,%02c%2V\ %P%*
 set laststatus=2
+
+" Smart indentation
+set autoindent smartindent
 
 " Enable mouse in all modes
 set mouse=a
@@ -105,10 +109,26 @@ if has("autocmd")
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 	" Treat .md files as Markdown
-	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+	autocmd BufNewFile,BufRead *.md set filetype=markdown
 	" Treat .yml file as YAML
-	autocmd BufNewFile,BufRead *.yaml,*.yml setlocal filetype=yaml
-        autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+	autocmd BufNewFile,BufRead *.yaml,*.yml set filetype=yaml
+        autocmd FileType yaml set ts=2 sts=2 sw=2 expandtab
+endif
+
+filetype plugin indent on
+if &term =~ "xterm"
+  if has("terminfo")
+    set t_Co=8
+    set t_Sf=1%dm
+    set t_Sb=1%dm
+  else
+    set t_Co=8
+    set t_Sf=m
+    set t_Sb=m
+  endif
+endif
+if filereadable(expand("$HOME/.vimrc.local"))
+  source $HOME/.vimrc.local
 endif
 
 " set Abbrevations
