@@ -98,6 +98,19 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
+" Automatic commands
+if has("autocmd")
+	" Enable file type detection
+	filetype on
+	" Treat .json files as .js
+	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+	" Treat .md files as Markdown
+	autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
+	" Treat .yml file as YAML
+	autocmd BufNewFile,BufRead *.yaml,*.yml setlocal filetype=yaml
+        autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+endif
+
 " set Abbrevations
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
