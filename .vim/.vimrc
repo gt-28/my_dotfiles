@@ -65,6 +65,8 @@ set laststatus=2
 
 " Enable mouse in all modes
 set mouse=a
+set mouse=r
+set mouse=v
 
 " set undolevels
 set undolevels=1000
