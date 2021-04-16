@@ -120,6 +120,11 @@ alias gita="git add --all"
 alias gitb="git branch -l -v"
 alias gitl="git log"
 alias gitc="git checkout"
+alias gitd="git diff"
+alias gitl="git logi --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'\'' --abbrev-commit"
+
+alias grep='() { $(whence -p grep) --color=auto $@ }'
+  alias egrep='() { $(whence -p egrep) --color=auto $@ }'
 
 alias l="ls -alhG"
 alias ll="ls -alhG"
@@ -139,6 +144,9 @@ source ~/.jfrog/jfrog_zsh_completion
 
 # python ansible
 #export DYLD_LIBRARY_PATH=/usr/local/opt/openssl/lib:$DYLD_FALLBACK_LIBRARY_PATH
+
+# Iterm 2
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
